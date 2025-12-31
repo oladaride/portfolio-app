@@ -1,0 +1,38 @@
+---
+name: Deploy Portfolio App
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t portfolio-app .
+
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Push image to Docker Hub
+        run: |
+          docker tag portfolio-app ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker run -d -p 80:80 --name portfolio ${{ secrets.DOCKER_USERNAME }}/portfolio-app:latest
+
