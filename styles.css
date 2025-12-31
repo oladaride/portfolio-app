@@ -18,7 +18,7 @@ html,
 body {
     height: 100%;
     margin: 0;
-    font-family: Inter, Segoe UI, system-ui, Arial;
+    font-family: playfair display, Inter, Segoe UI, system-ui, Arial, sans-serif;
     background: linear-gradient(180deg, var(--bg), #071023);
     color: var(--text);
 }
