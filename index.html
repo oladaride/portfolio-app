@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio of [Your Name] — projects, skills, contact." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="#">Emmanuel Alabi</a>
+            <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="primaryNav"
+                aria-label="Toggle menu">☰</button>
+            <nav id="primaryNav" class="nav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1><span class="accent">Hello! I'm Emmanuel</span></h1>
+                    <img class="dp" src="assets/linkedindp.jpeg" alt="Hero Image">
+                    <p class="lead">From Development to Operations,
+                        I automate the SDLC and build cloud infrastructure
+                        that scales and stays cost-efficient.
+                    </p>
+                    <p class="ctas">
+                        <a class="btn" href="#projects">See Work</a>
+                        <a class="btn btn-outline" href="#contact">Contact Me</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about container" id="about">
+            <h2>About</h2>
+            <p> I’m a Cloud & DevOps Engineer with 11+ years of IT support experience, now focused on designing,
+                automating, and deploying applications across AWS and Oracle Cloud Infrastructure. Skilled in Terraform,
+                Ansible, CI/CD pipelines, and Linux administration, I bring hands‑on expertise in networking, security,
+                and infrastructure management. Certified as an Oracle Cloud Infrastructure Architect Associate, I
+                balance performance, security, and cost efficiency in every solution. Outside of tech, I enjoy family
+                time, making music,
+                and playing with words — creativity fuels both my work and life.</p>
+            <h3>Technologies</h3>
+            <ul class="skills">
+                <li>Cloud Platforms: AWS, OCI</li>
+                <li>Infrastructure as Code: Terraform,Ansible</li>
+                <li>Containers & Orchestration: Docker, Kubernetes</li>
+                <li>CI/CD & Version Control: Github Actions, Jenkins</li>
+                <li>Operating Systems: Linux (Ubuntu, CentOS)</li>
+                <li>Scripting & Programming: Bash, Python</li>
+                <li>Monitoring & Logging: Prometheus</li>
+            </ul><br>
+            <div class="technologies-images">
+                <img src="assets/aws.png" alt="AWS Logo" title="AWS" />
+                <img src="assets/oci-logo.png" alt="OCI Logo" title="OCI" />
+                <img src="assets/terraform-logo.png" alt="Terraform Logo" title="Terraform" />
+                <img src="assets/ansible-logo.png" alt="Ansible Logo" title="Ansible" />
+                <img src="assets/docker-logo.png" alt="Docker Logo" title="Docker" />
+                <img src="assets/github-logo.png" alt="github Logo" title="github" />
+                <img src="assets/kubernetes-logo.png" alt="Kubernetes Logo" title="Kubernetes" />
+                <img src="assets/prome-logo.png" alt="Prometheus Logo" title="Prometheus" />
+            </div>
+        </section>
+
+        <section class="projects container" id="projects">
+            <h2>Selected Projects</h2>
+            <div class="project-grid">
+                <article class="project">
+                    <img src="assets/project1.svg" alt="Project 1 screenshot" />
+                    <h3>Project One</h3>
+                    <p>Short description of the project, your role, and tech used.</p>
+                    <p class="proj-links">
+                        <a href="#" target="_blank" rel="noopener">Live</a>
+                        <a href="#" target="_blank" rel="noopener">Code</a>
+                    </p>
+                </article>
+
+                <article class="project">
+                    <img src="assets/project2.svg" alt="Project 2 screenshot" />
+                    <h3>Project Two</h3>
+                    <p>Short description and highlight.</p>
+                    <p class="proj-links">
+                        <a href="#" target="_blank" rel="noopener">Live</a>
+                        <a href="#" target="_blank" rel="noopener">Code</a>
+                    </p>
+                </article>
+
+                <article class="project">
+                    <img src="assets/project3.svg" alt="Project 3 screenshot" />
+                    <h3>Project Three</h3>
+                    <p>Short description and highlight.</p>
+                    <p class="proj-links">
+                        <a href="#" target="_blank" rel="noopener">Live</a>
+                        <a href="#" target="_blank" rel="noopener">Code</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact container" id="contact">
+            <h2>Contact</h2>
+            <p>Prefer email? <a href="mailto:olalabi0407@example.com">olalabi0407@example.com</a></p>
+            <form id="contactForm" class="contact-form" action="#" novalidate>
+                <label for="name">Name</label>
+                <input id="name" name="name" required />
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button class="btn" type="submit">Send</button>
+                <p id="contactStatus" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> [Your Name]. Built with care.</p>
+            <p class="footer-links">
+                <a href="#">GitHub</a> · <a href="#">LinkedIn</a> · <a href="#">Twitter</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+
+</html>
