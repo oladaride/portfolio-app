@@ -60,13 +60,22 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 Explanation:
+
+
 FROM nginx:alpine
+
 Uses a lightweight Nginx base image.
+
 COPY . /usr/share/nginx/html
+
 Copies the portfolio files into the directory Nginx serves from.
+
 EXPOSE 80
+
 Exposes port 80 for HTTP traffic.
+
 CMD
+
 Starts Nginx in the foreground so the container remains running.
 
 The Docker image was built locally:
@@ -165,6 +174,7 @@ GitHub Actions for automated deployment
 EC2 as the hosting environment
 
 Although the application itself is incomplete, the deployment pipeline is fully functional and production-oriented, and that's one of the core responsibilities of a DevOps Engineer.
+
 
 
 
