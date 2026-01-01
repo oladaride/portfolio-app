@@ -6,8 +6,11 @@ This documentation describes the complete process of deploying a work-in-progres
 My goal is to demonstrate a full CI/CD pipeline, not application completeness.
 
 The original Windows file path:
+
 `C:\Users\LENOVO\Desktop\portfolio.js`
+
 was converted to a WSL-compatible path:
+
 `/mnt/c/Users/LENOVO/Desktop/portfolio.js`
 
 This path conversion allows WSL to access files stored on the Windows filesystem.
@@ -15,14 +18,24 @@ This path conversion allows WSL to access files stored on the Windows filesystem
 ## Git Version Control Setup
 
 Inside the project directory, Git was initialized:
+
 `git init`
+
+
 The repository status was checked:
+
 `git status`
+
+
 All project files were staged:
 `git add .`
+
 The initial commit was created:
+
 `git commit -m "first commit"`
+
 The default branch was renamed from master to main to follow modern Git conventions:
+
 `git branch -M main`
 
 ## GitHub Repository Configuration
@@ -31,7 +44,9 @@ A new repository was created on GitHub.
 The remote repository was added locally:
 
 `git remote add origin https://github.com/oladaride/portfolio-app.git`
+
 The project was pushed to GitHub:
+
 `git push -u origin main`
 
 ## Containerization with Docker
@@ -57,6 +72,7 @@ Starts Nginx in the foreground so the container remains running.
 The Docker image was built locally:
 
 `sudo docker build -t portfolio-app .`
+
 This produced a Docker image named:
 
 portfolio-app:latest
@@ -64,6 +80,7 @@ portfolio-app:latest
 The container was started:
 
 `sudo docker run -d -p 80:80 --name portfolio portfolio-app`
+
 Command Breakdown:
 -d → Runs the container in detached (background) mode
 -p 80:80 → Maps the host’s port 80 to the container’s port 80
@@ -88,7 +105,9 @@ DOCKER_PASSWORD
 ## GitHub Actions Workflow
 
 A workflow file was created:
+
 `.github/workflows/deploy.yml`
+
 Workflow configuration:
 ```
 name: Deploy Portfolio App
@@ -146,6 +165,7 @@ GitHub Actions for automated deployment
 EC2 as the hosting environment
 
 Although the application itself is incomplete, the deployment pipeline is fully functional and production-oriented, and that's one of the core responsibilities of a DevOps Engineer.
+
 
 
 
